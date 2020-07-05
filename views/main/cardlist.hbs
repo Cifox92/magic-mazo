@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <h1>Search Cards</h1>
+
+            <form action="/main/cardlist" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name">
+                </div>
+
+                <button type="submit" class="btn btn-dark">Search!</button>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {{#each cards}}
+        <div class="col-md-3 card">
+                <a href="/main/cardlist/{{id}}"><img src="{{imageUrl}}" alt="{{name}}"></a>
+                <a id="add-{{id}}" class="btn btn-dark" href="/main/cardlist/{{id}}/selected">Add it to your collection</a>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script type="text/javascript" src="routes/main.routes.js"></script>

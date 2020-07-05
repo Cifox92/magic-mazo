@@ -1,0 +1,27 @@
+<div class="container">
+    {{#with user}}
+    <h1> Welcome to your profile, {{username}}</h1>
+    {{/with}}
+
+    <p>Here you can check your sets and cards</p>
+
+    <div class="row">
+        {{#each sets}}
+             <div class="col-md-3 card">
+                <a href="/profile/setedit/{{id}}"><img src="{{img}}" class="deckImg" alt="{{name}}"></a>
+                <h2>{{name}}</h2>
+            </div>
+        {{/each}}
+    </div>
+
+    <a href="/profile/createdeck">Create a deck</a>
+
+    <p>Your cards:</p>
+        <div class="row">
+            {{#each cards}}
+                <div class="col-md-3 card">
+                    <a href="/profile/carddetails"><img src="{{img}}" alt="{{name}}"></a>
+                </div>
+            {{/each}}
+        </div>
+</div>

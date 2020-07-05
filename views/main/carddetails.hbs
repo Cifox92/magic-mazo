@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{card.imageUrl}}" alt="{{card.name}}">
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>{{card.name}}</li>
+                <li>{{card.colors}}</li>
+                <li><p>{{card.text}}</p></li>
+                <li>{{card.manaCost}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="/main/cardlist/{{card.id}}/selected">Add it to your collection</a>
+</div>
