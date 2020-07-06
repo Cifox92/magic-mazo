@@ -37,7 +37,7 @@ router.post('/deletecard/:id', (req, res) => {
     cardsSelected.forEach(card => {
         console.log(card)
         Set
-            .findByIdAndUpdate(req.params.id, {$pull: {"cards": {_id: card}}}, {new: true})
+            .findByIdAndUpdate(req.params.id, {$pull: {"cards": {"_id": card}}}, {new: true})
             .catch(err => console.log(err))
     })
     res.redirect(`/profile/setedit/${req.params.id}`)
