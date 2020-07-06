@@ -30,7 +30,7 @@ router.post('/createdeck', checkAuthenticated, (req, res) => {
 
 router.get('/setedit/:id', checkAuthenticated, (req, res) => {
     Promise
-        .all([Set.findById(req.params.id), Card.find({user: req.user.id})])
+        .all([Set.findById(req.params.id).populate('cards'), Card.find({user: req.user.id})])
         .then(data => res.render('user/setedit', {set: data[0], card: data[1]}))
 })
 
