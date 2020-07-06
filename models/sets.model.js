@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const setSchema = new Schema({
     name: String,
     img: String,
-    cards: Array,
+    cards: [{type: Schema.Types.ObjectId, ref: 'Card'}],
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true
