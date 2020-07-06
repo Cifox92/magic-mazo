@@ -1,15 +1,15 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
 
-        <h1>Registro</h1>
+        <h1 class="font-weight-bold text-white">Registro</h1>
 
         <form action="/signup" method="POST">
             <div class="form-group">
-                <label for="field1">Nombre de usuario</label>
+                <label for="field1" class="font-weight-bold text-white">Nombre de usuario</label>
                 <input name="username" type="text" class="form-control" id="field1">
             </div>
             <div class="form-group">
-                <label for="field2">Contraseña</label>
+                <label for="field2" class="font-weight-bold text-white">Contraseña</label>
                 <input name="password" type="password" class="form-control" id="field2">
                 <small class="form-text text-muted">Nunca compartas tu contraseña</small>
             </div>
@@ -21,6 +21,6 @@
             {{/if}}
         </form>
 
-        <p>¿Tienes cuenta? <a href="/login">¡Inicia sesión!</a></p>
+        <p class="font-weight-bold text-primary">¿Tienes cuenta? <a class="text-warning" href="/login">¡Inicia sesión!</a></p>
     </div>
 </div>
