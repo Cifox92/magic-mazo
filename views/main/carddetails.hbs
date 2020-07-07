@@ -8,10 +8,16 @@
                 <li class="text-white liInfo"><span>Name: </span>{{card.name}}</li>
                 <li class="text-white liInfo"><span>Color: </span>{{card.colors}}</li>
                 <li class="text-white liInfo"><span>Rules: </span>{{card.text}}</li>
-                <li class="text-white liInfo"><span>Mana cost: </span>{{card.manaCost}}</li>
+                <li class="text-white liInfo">
+                    <span>Mana cost: </span>
+                    {{#each card.manaCost}}
+                        <img class="imgMana" src="{{this}}" alt="manaImg">
+                    {{/each}}</li>
+                
             </ul>
         </div>
     </div>
 
-    <a href="/main/cardlist/{{card.id}}/selected" class="btn btn-primary">Add it to your collection</a>
+    <a class="btn btn-primary" href="/main/cardlist/{{card.id}}/selected">Add it to your collection</a>
+    <a class="btn btn-dark" href="/main/cardlist">Back</a>
 </div>

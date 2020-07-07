@@ -28,10 +28,34 @@ router.post('/createdeck', checkAuthenticated, (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.get('/deletedeck/:id', (req, res) => 
+    Set
+        .findByIdAndDelete(req.params.id)
+        .then(res.redirect('/profile'))
+        .catch(err => console.log(err))
+        )
+
 router.get('/setedit/:id', checkAuthenticated, (req, res) => {
     Promise
         .all([Set.findById(req.params.id).populate('cards'), Card.find({user: req.user.id})])
         .then(data => res.render('user/setedit', {set: data[0], card: data[1]}))
+})
+
+router.get('/deletecard/:id', (req, res) => 
+    Card
+        .findByIdAndDelete(req.params.id)
+        .then(res.redirect('/profile'))
+        .catch(err => console.log(err))    
+    )
+
+router.get('/carddetails/:id', (req, res) => {
+    Card
+        .findById(req.params.id)
+        .then(card => {
+            console.log(card)
+            res.render('user/usercarddetails', card)
+        })
+        .catch(err => console.log(err))
 })
 
 module.exports = router

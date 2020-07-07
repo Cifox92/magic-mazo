@@ -6,26 +6,29 @@
 
         <p class="text-white">Here you can check your sets and cards</p>
     </div>
+                
+    <h2>Your decks:</h2>
+    <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
 
-    <div class="row ">
+    <div class="row">
         {{#each sets}}
              <div class="col-md-3 card background">
-                <a href="/profile/setedit/{{id}}" class="text-warning">
-                    <img src="{{img}}" class="deckImg" alt="{{name}}">
-                    <h2 class="text-warning">{{name}}</h2>
-                </a>
-                
+                <a href="/profile/setedit/{{id}}" class="text-warning"><img src="{{img}}" class="deckImg" alt="{{name}}"></a>
+                <h2 class="text-warning">{{name}}</h2>
+                <a class="btn btn-dark" href="/profile/deletedeck/{{id}}">Delete deck</a>
             </div>
         {{/each}}
     </div>
 
     <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
 
-    <p class="text-danger">Your cards:</p>
+    <h2 class="text-danger">Your cards:</h2>
+    <small>Add more cards using the search</small>
         <div class="row">
             {{#each cards}}
                 <div class="col-md-3 card background">
-                    <a href="/profile/carddetails"><img src="{{img}}" alt="{{name}}" class="imgcard"></a>
+                    <a href="/profile/carddetails/{{id}}"><img src="{{img}}" alt="{{name}}" class="imgcard"></a>
+                    <a class="btn btn-dark" href="/profile/deletecard/{{id}}">Delete card</a>
                 </div>
             {{/each}}
         </div>
