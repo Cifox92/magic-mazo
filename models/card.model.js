@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 const cardSchema = new Schema({
     name: String,
     colors: [String],
-    mana: String,
+    text: String,
+    mana: Array,
     rules: Array,
     img: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'}

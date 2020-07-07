@@ -5,22 +5,26 @@
 
     <p>Here you can check your sets and cards</p>
 
+    <h2>Your decks:</h2>
+    <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
+
     <div class="row">
         {{#each sets}}
              <div class="col-md-3 card">
                 <a href="/profile/setedit/{{id}}"><img src="{{img}}" class="deckImg" alt="{{name}}"></a>
                 <h2>{{name}}</h2>
+                <a class="btn btn-dark" href="/profile/deletedeck/{{id}}">Delete deck</a>
             </div>
         {{/each}}
     </div>
 
-    <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
-
-    <p>Your cards:</p>
+    <h2>Your cards:</h2>
+    <small>Add more cards using the search</small>
         <div class="row">
             {{#each cards}}
                 <div class="col-md-3 card">
-                    <a href="/profile/carddetails"><img src="{{img}}" alt="{{name}}"></a>
+                    <a href="/profile/carddetails/{{id}}"><img src="{{img}}" alt="{{name}}"></a>
+                    <a class="btn btn-dark" href="/profile/deletecard/{{id}}">Delete card</a>
                 </div>
             {{/each}}
         </div>
