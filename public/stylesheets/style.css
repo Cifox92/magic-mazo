@@ -1,3 +1,32 @@
+h1, h2, h3 {
+  font-weight: 200; }
+
+p {
+  font-size: 24px;
+  margin: 30px 0; }
+
+.navbar {
+  margin-bottom: 70px; }
+
+.back-trans {
+  background-color: rgba(128, 139, 150, 0.4);
+  padding: 20px;
+  border-radius: 10px; }
+
+.imglogo {
+  width: 100px; }
+
+.background {
+  background: transparent; }
+
+.imgcard {
+  border-radius: 9px;
+  width: 200px;
+  background: transparent; }
+
+.markup-center {
+  text-align: center; }
+
 body {
   font-weight: 200; }
 
@@ -12,23 +41,20 @@ body {
   z-index: -1;
   filter: blur(3px); }
 
-.index {
-  background-color: rgba(128, 139, 150, 0.7);
-  padding: 20px;
+.ulInfo {
+  background-color: rgba(128, 139, 150, 0.4);
   border-radius: 10px; }
 
-p {
-  font-size: 24px;
-  margin: 30px 0; }
+.liInfo {
+  list-style: none;
+  padding: 10px;
+  font-size: 20px; }
 
-.imglogo {
-  width: 100px; }
+.liInfo span {
+  color: darkblue; }
 
-h1, h2, h3 {
-  font-weight: 200; }
-
-.navbar {
-  margin-bottom: 70px; }
+.deckImg {
+  width: 300px; }
 
 #errorMsg {
   background-color: red;
@@ -44,8 +70,5 @@ h1, h2, h3 {
 
 .btn-green {
   background-color: green; }
-
-.deckImg {
-  width: 300px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,14 +2,14 @@
     <div class="row justify-content-center">
         {{#with set}}
             <div class="col-md-12">
-                <h2>Edit the {{name}} deck</h2>
+                <h2 class="text-warning">Edit the {{name}} deck</h2>
                 <img src="{{img}}" class="deckImg" alt="setImg">
             </div>
         {{/with}}
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 text-white liInfo back-trans">
             <h3>Your cards:</h3>
             {{#with set}}
             <form action="/profile/setedit/add/{{id}}" method="POST">
@@ -20,11 +20,11 @@
                     <input type="checkbox" name="cardname" id="cardname" value="{{id}}">
                 </li>
                 {{/each}}
-                <button type="submit">Add cards</button>
+                <button type="submit" class="btn btn-success">Add cards</button>
             </form>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 text-white liInfo back-trans">
             {{#with set}}
                 <h3>Cards inside the deck:</h3>
                 <form action="/profile/setedit/deletecard/{{id}}" method="POST">
@@ -34,7 +34,7 @@
                             <input type="checkbox" name="cardname" id="cardname" value="{{_id}}">
                         </li>
                     {{/each}}
-                    <button type="submit">Delete cards from deck</button>
+                    <button type="submit" class="btn btn-danger">Delete cards from deck</button>
                 </form>
             {{/with}}
         </div>

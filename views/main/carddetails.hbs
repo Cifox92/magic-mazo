@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="{{card.imageUrl}}" alt="{{card.name}}">
+            <img src="{{card.imageUrl}}" alt="{{card.name}}" class="imgcard">
         </div>
         <div class="col-md-6">
-            <ul>
-                <li>{{card.name}}</li>
-                <li>{{card.colors}}</li>
-                <li><p>{{card.text}}</p></li>
-                <li>{{card.manaCost}}</li>
+            <ul class="ulInfo">
+                <li class="text-white liInfo"><span>Name: </span>{{card.name}}</li>
+                <li class="text-white liInfo"><span>Color: </span>{{card.colors}}</li>
+                <li class="text-white liInfo"><span>Rules: </span>{{card.text}}</li>
+                <li class="text-white liInfo"><span>Mana cost: </span>{{card.manaCost}}</li>
             </ul>
         </div>
     </div>
 
-    <a href="/main/cardlist/{{card.id}}/selected">Add it to your collection</a>
+    <a href="/main/cardlist/{{card.id}}/selected" class="btn btn-primary">Add it to your collection</a>
 </div>

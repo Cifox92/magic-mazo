@@ -1,26 +1,31 @@
 <div class="container">
-    {{#with user}}
-    <h1> Welcome to your profile, {{username}}</h1>
-    {{/with}}
+    <div class="markup-center back-trans">
+        {{#with user}}
+        <h1 class="text-white"> Welcome to your profile, {{username}}</h1>
+        {{/with}}
 
-    <p>Here you can check your sets and cards</p>
+        <p class="text-white">Here you can check your sets and cards</p>
+    </div>
 
-    <div class="row">
+    <div class="row ">
         {{#each sets}}
-             <div class="col-md-3 card">
-                <a href="/profile/setedit/{{id}}"><img src="{{img}}" class="deckImg" alt="{{name}}"></a>
-                <h2>{{name}}</h2>
+             <div class="col-md-3 card background">
+                <a href="/profile/setedit/{{id}}" class="text-warning">
+                    <img src="{{img}}" class="deckImg" alt="{{name}}">
+                    <h2 class="text-warning">{{name}}</h2>
+                </a>
+                
             </div>
         {{/each}}
     </div>
 
     <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
 
-    <p>Your cards:</p>
+    <p class="text-danger">Your cards:</p>
         <div class="row">
             {{#each cards}}
-                <div class="col-md-3 card">
-                    <a href="/profile/carddetails"><img src="{{img}}" alt="{{name}}"></a>
+                <div class="col-md-3 card background">
+                    <a href="/profile/carddetails"><img src="{{img}}" alt="{{name}}" class="imgcard"></a>
                 </div>
             {{/each}}
         </div>

@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-5 back-trans">
 
-            <h1>Search Cards</h1>
+            <h1 class="text-body">Search Cards</h1>
 
             <form action="/main/cardlist" method="post">
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name" class="text-white">Name</label>
                     <input name="name" type="text" class="form-control" id="name">
                 </div>
 
@@ -16,12 +16,15 @@
     </div>
     <div class="row justify-content-center">
         {{#each cards}}
-        <div class="col-md-3 card">
-                <a href="/main/cardlist/{{id}}"><img src="{{imageUrl}}" alt="{{name}}"></a>
-                <a id="add-{{id}}" class="btn btn-dark" href="/main/cardlist/{{id}}/selected">Add it to your collection</a>
+        <div class="col-md-3 card background">
+                <a href="/main/cardlist/{{id}}" class="markup-center"> 
+                    <img src="{{imageUrl}}" alt="{{name}}" class="imgcard">
+                </a>
+                <a id="add-{{id}}" class="btn btn-primary markup-center" href="/main/cardlist/{{id}}/selected">Add it to your collection</a>
         </div>
         {{/each}}
     </div>
 </div>
+
 
 <script type="text/javascript" src="routes/main.routes.js"></script>
