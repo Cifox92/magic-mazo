@@ -16,7 +16,12 @@
     </div>
     <div class="row justify-content-center">
         {{#each cards}}
-            {{>playCard this}}
+            <div class="col-md-3 card background">
+                <a href="/main/cardlist/{{id}}" class="markup-center text-warning"> 
+                {{>playCard this}}
+                </a> 
+                <a id="add-{{id}}" class="btn btn-primary markup-center" href="/main/cardlist/{{id}}/selected">Add it to your collection</a>
+            </div>
         {{/each}}
     </div>
 </div>

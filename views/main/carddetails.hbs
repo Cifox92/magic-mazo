@@ -1,21 +1,22 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <img src="{{card.imageUrl}}" alt="{{card.name}}" class="imgcard">
-            <br>
-            <span class="ulInfo text-warning">{{card.name}}</span>
+        <div class="col-md-6 text-warning">
+            {{>playCard this}}
         </div>
         <div class="col-md-6">
             <ul class="ulInfo">
                 <li class="text-white liInfo"><span>Name: </span>{{card.name}}</li>
+                {{#if card.colors}}
                 <li class="text-white liInfo"><span>Color: </span>{{card.colors}}</li>
+                {{/if}}
                 <li class="text-white liInfo rules"><span >Description: </span>{{card.text}}</li>
+                {{#if card.manaCost}}
                 <li class="text-white liInfo">
                     <span>Mana cost: </span>
                     {{#each card.manaCost}}
                         <img class="imgMana" src="{{this}}" alt="manaImg">
                     {{/each}}</li>
-                
+                {{/if}}
             </ul>
         </div>
     </div>
