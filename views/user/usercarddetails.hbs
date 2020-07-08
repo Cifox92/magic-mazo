@@ -1,14 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="{{img}}" alt="{{name}}">
+            <img src="{{img}}" alt="{{name}}" class="imgcard">
+            <br>
+            <span class="ulInfo text-warning">{{name}}</span>
         </div>
         <div class="col-md-6">
-            <ul>
-                <li>{{name}}</li>
-                <li>{{colors}}</li>
-                <li><p>{{text}}</p></li>
-                <li>
+            <ul class="ulInfo">
+                <li class="text-white liInfo"><span>Name: </span>{{name}}</li>
+                <li class="text-white liInfo"><span>Color: </span>{{colors}}</li>
+                <li class="text-white liInfo rules"><span>Description: </span>{{text}}</li>
+                <li class="text-white liInfo">
+                    <span>Mana cost: </span>
                     {{#each mana}}
                         <img class="imgMana" src="{{this}}" alt="manaImg">
                     {{/each}}
@@ -16,5 +19,5 @@
             </ul>
         </div>
     </div>
-    <a class="btn btn-dark" href="/profile">Back</a>
+    <a class="btn btn-orange" href="/profile">Back</a>
 </div>

@@ -1,9 +1,9 @@
+body {
+  font-family: Magic;
+  font-size: 20px; }
+
 h1, h2, h3 {
   font-weight: 200; }
-
-p {
-  font-size: 24px;
-  margin: 30px 0; }
 
 .navbar {
   margin-bottom: 70px; }
@@ -26,6 +26,16 @@ p {
 
 .markup-center {
   text-align: center; }
+
+.btn-orange {
+  background-color: orangered;
+  color: white; }
+
+.btn {
+  font-size: 18px; }
+
+.rules {
+  font-family: Fondamento-Italic; }
 
 body {
   font-weight: 200; }
@@ -75,6 +85,6 @@ body {
   width: 300px; }
 
 .imgMana {
-  width: 20px; }
+  width: 25px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,18 +10,13 @@
                     <input name="name" type="text" class="form-control" id="name">
                 </div>
 
-                <button type="submit" class="btn btn-dark">Search!</button>
+                <button type="submit" class="btn btn-info">Search!</button>
             </form>
         </div>
     </div>
     <div class="row justify-content-center">
         {{#each cards}}
-        <div class="col-md-3 card background">
-                <a href="/main/cardlist/{{id}}" class="markup-center"> 
-                    <img src="{{imageUrl}}" alt="{{name}}" class="imgcard">
-                </a>
-                <a id="add-{{id}}" class="btn btn-primary markup-center" href="/main/cardlist/{{id}}/selected">Add it to your collection</a>
-        </div>
+            {{>playCard this}}
         {{/each}}
     </div>
 </div>

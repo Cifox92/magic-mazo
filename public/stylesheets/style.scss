@@ -1,11 +1,11 @@
 //General all pages
-h1, h2, h3 {
-  font-weight: 200;
+body{
+  font-family: Magic;
+  font-size: 20px;
 }
 
-p{
-  font-size: 24px;
-  margin: 30px 0;
+h1, h2, h3 {
+  font-weight: 200;
 }
 
 .navbar {
@@ -34,6 +34,16 @@ p{
 
 .markup-center{
   text-align: center;
+}
+.btn-orange{
+  background-color: orangered;
+  color: white;
+}
+.btn{
+  font-size: 18px;
+}
+.rules{
+  font-family: Fondamento-Italic;
 }
 
 //layout
@@ -100,5 +110,5 @@ body{
 }
 
 .imgMana {
-  width: 20px;
+  width: 25px;
 }

@@ -1,35 +1,45 @@
 <div class="container">
     <div class="markup-center back-trans">
         {{#with user}}
-        <h1 class="text-white"> Welcome to your profile, {{username}}</h1>
+        <h1 class="text-white"> Welcome to your profile, <span class="text-warning">{{username}}</span></h1>
         {{/with}}
 
         <p class="text-white">Here you can check your sets and cards</p>
     </div>
-                
-    <h2>Your decks:</h2>
-    <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
+     
+    <div class="markup-center">
+        <h2 class="text-white">Your decks:</h2>
+        <a class="btn btn-primary" href="/profile/createdeck">Create a deck</a>
+    </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
         {{#each sets}}
              <div class="col-md-3 card background">
-                <a href="/profile/setedit/{{id}}" class="text-warning"><img src="{{img}}" class="deckImg" alt="{{name}}"></a>
-                <h2 class="text-warning">{{name}}</h2>
-                <a class="btn btn-dark" href="/profile/deletedeck/{{id}}">Delete deck</a>
+                <a href="/profile/setedit/{{id}}" class="text-warning">
+                    <img src="{{img}}" class="deckImg" alt="{{name}}">
+                    <h2 class="text-warning">{{name}}</h2>
+                </a>
+                
+                <a class="btn btn-danger" href="/profile/deletedeck/{{id}}">Delete deck</a>
             </div>
         {{/each}}
     </div>
 
-    <a class="btn btn-dark" href="/profile/createdeck">Create a deck</a>
+    <div class="markup-center">
+        <h2 class="text-white">Your cards:</h2>
+        <small class="text-info font-weight-bold markup-center">Add more cards using the search</small>
+    </div>
 
-    <h2 class="text-danger">Your cards:</h2>
-    <small>Add more cards using the search</small>
-        <div class="row">
-            {{#each cards}}
-                <div class="col-md-3 card background">
-                    <a href="/profile/carddetails/{{id}}"><img src="{{img}}" alt="{{name}}" class="imgcard"></a>
-                    <a class="btn btn-dark" href="/profile/deletecard/{{id}}">Delete card</a>
-                </div>
-            {{/each}}
-        </div>
+    <div class="row justify-content-center">
+        {{#each cards}}
+            <div class="col-md-3 card background">
+                <a href="/profile/carddetails/{{id}}" class="markup-center text-warning">
+                    <img src="{{img}}" alt="{{name}}" class="imgcard">
+                    <br>
+                    <span class="ulInfo">{{name}}</span>
+                </a>
+                <a class="btn btn-danger" href="/profile/deletecard/{{id}}">Delete card</a>
+            </div>
+        {{/each}}
+    </div>
 </div>

@@ -10,6 +10,8 @@ require('./configs/debugger.config')
 const express = require('express')
 const app = express()
 
+
+
 // Configs
 require('./configs/preformatter.config')(app)
 require('./configs/middleware.config')(app)
@@ -21,5 +23,7 @@ require('./configs/locals.config')(app)
 // Routes index
 require('./routes')(app)
 
+const hbs = require('hbs')
+hbs.registerPartials(__dirname + "/views/main/partials")
 
 module.exports = app

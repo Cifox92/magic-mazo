@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row justify-content-center">
         {{#with set}}
-            <div class="col-md-12">
-                <h2 class="text-warning">Edit the {{name}} deck</h2>
+            <div class="col-md-12 markup-center">
+                <h2 class="text-white">Edit the <span class="text-warning">{{name}}</span> deck</h2>
                 <img src="{{img}}" class="deckImg" alt="setImg">
             </div>
         {{/with}}
@@ -10,31 +10,43 @@
 
     <div class="row">
         <div class="col-md-6 text-white liInfo back-trans">
-            <h3>Your cards:</h3>
+            <h3 class="markup-center">Your cards:</h3>
             {{#with set}}
             <form action="/profile/setedit/add/{{id}}" method="POST">
             {{/with}}
-                {{#each card}}
-                <li>
-                    <label for="cardname">{{name}}</label>
-                    <input type="checkbox" name="cardname" id="cardname" value="{{id}}">
-                </li>
-                {{/each}}
-                <button type="submit" class="btn btn-success">Add cards</button>
+                <div class="row">
+                    <div class="col-md-6 markup-center">
+                        {{#each card}}
+                        <li>
+                            <label for="cardname">{{name}}</label>
+                            <input type="checkbox" name="cardname" id="cardname" value="{{id}}">
+                        </li>
+                        {{/each}}
+                    </div>
+                    <div class="col-md-6 markup-center">
+                        <button type="submit" class="btn btn-success position-fixed">Add cards</button>
+                    </div>
+                </div>
             </form>
         </div>
 
         <div class="col-md-6 text-white liInfo back-trans">
+            <h3 class="markup-center">Cards inside the deck:</h3>
             {{#with set}}
-                <h3>Cards inside the deck:</h3>
-                <form action="/profile/setedit/deletecard/{{id}}" method="POST">
-                    {{#each cards}}
-                        <li>
-                            <label for="cardname">{{name}}</label>
-                            <input type="checkbox" name="cardname" id="cardname" value="{{_id}}">
-                        </li>
-                    {{/each}}
-                    <button type="submit" class="btn btn-danger">Delete cards from deck</button>
+                <form action="/profile/setedit/deletecard/{{id}}" method="POST"> 
+                <div class="row">
+                        <div class="col-md-6 markup-center">
+                            {{#each cards}}
+                            <li>
+                                <label for="cardname">{{name}}</label>
+                                <input type="checkbox" name="cardname" id="cardname" value="{{_id}}">
+                            </li>
+                            {{/each}}
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-danger position-fixed">Delete cards from deck</button>
+                        </div>
+                </div>
                 </form>
             {{/with}}
         </div>

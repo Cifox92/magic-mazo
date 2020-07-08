@@ -4,6 +4,7 @@ const mtg = require('mtgsdk')
 const User = require('../models/user.model')
 const Card = require('../models/card.model')
 
+
 // Logged in checker middleware
 const checkAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.redirect('/login')
 
