@@ -1,26 +1,26 @@
 <div class="row justify-content-center">
     <div class="col-md-6 back-trans">
 
-        <h1 class="font-weight-bold text-warning">Registro</h1>
+        <h1 class="font-weight-bold text-warning">Sign Up</h1>
 
         <form action="/signup" method="POST">
             <div class="form-group">
-                <label for="field1" class="font-weight-bold text-warning">Nombre de usuario</label>
+                <label for="field1" class="font-weight-bold text-warning">Username</label>
                 <input name="username" type="text" class="form-control" id="field1" placeholder="Esto es un viaje de tripi">
             </div>
             <div class="form-group">
-                <label for="field2" class="font-weight-bold text-warning">Contraseña</label>
+                <label for="field2" class="font-weight-bold text-warning">Password</label>
                 <input name="password" type="password" class="form-control" id="field2" placeholder="Aceptamos pulpo">
-                <small class="form-text text-muted">Nunca compartas tu contraseña</small>
+                <small class="form-text text-muted">Never share your password with anyone!</small>
             </div>
 
-            <button type="submit" class="btn btn-dark btn-block btn-lg">Registrarme</button>
+            <button type="submit" class="btn btn-dark btn-block btn-lg">Sign Up</button>
 
             {{#if errorMsg}}
             <div id="errorMsg">{{{errorMsg}}}</div>
             {{/if}}
         </form>
 
-        <p class="font-weight-bold text-warning">¿Tienes cuenta? <a class="text-white" href="/login">¡Inicia sesión!</a></p>
+        <p class="font-weight-bold text-warning">Already have an account? <a class="text-white" href="/login">Log In!</a></p>
     </div>
 </div>

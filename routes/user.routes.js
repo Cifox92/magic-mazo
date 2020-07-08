@@ -15,7 +15,7 @@ router.get('/', checkAuthenticated, (req, res) => {
 
 router.get('/createdeck', checkAuthenticated, (req, res) => res.render('user/createdeck'))
 
-router.post('/createdeck', checkAuthenticated, (req, res) => {
+router.post('/createdeck', checkAuthenticated, (req, res, next) => {
     const newDeck = {
         name: req.body.name,
         img: 'https://d1rw89lz12ur5s.cloudfront.net/photo/coretcg/file/7a0ec880ffcb11e38049251d499677e1/large/UP%20Deck%20Box%20Blue.png',
@@ -25,14 +25,14 @@ router.post('/createdeck', checkAuthenticated, (req, res) => {
     Set
         .create(newDeck)
         .then(res.redirect('/profile'))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
-router.get('/deletedeck/:id', (req, res) => 
+router.get('/deletedeck/:id', (req, res, next) => 
     Set
         .findByIdAndDelete(req.params.id)
         .then(res.redirect('/profile'))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
         )
 
 router.get('/setedit/:id', checkAuthenticated, (req, res) => {
@@ -41,21 +41,18 @@ router.get('/setedit/:id', checkAuthenticated, (req, res) => {
         .then(data => res.render('user/setedit', {set: data[0], card: data[1]}))
 })
 
-router.get('/deletecard/:id', (req, res) => 
+router.get('/deletecard/:id', (req, res, next) => 
     Card
         .findByIdAndDelete(req.params.id)
         .then(res.redirect('/profile'))
-        .catch(err => console.log(err))    
+        .catch(err => next(err))    
     )
 
-router.get('/carddetails/:id', (req, res) => {
+router.get('/carddetails/:id', (req, res, next) => {
     Card
         .findById(req.params.id)
-        .then(card => {
-            console.log(card)
-            res.render('user/usercarddetails', card)
-        })
-        .catch(err => console.log(err))
+        .then(card => res.render('user/usercarddetails', card))
+        .catch(err => next(err))
 })
 
 module.exports = router
