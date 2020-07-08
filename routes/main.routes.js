@@ -33,8 +33,10 @@ router.get('/cardlist/:id', checkAuthenticated, (req, res, next) => {
         card.card.imageUrl = "https://vignette.wikia.nocookie.net/magicarena/images/1/19/Cardback.png/revision/latest/scale-to-width-down/360?cb=20171013170540"
       }
 
-      card.card.manaCost = manaSymbols(card.card.manaCost)
-
+      if(card.card.manaCost) {
+        card.card.manaCost = manaSymbols(card.card.manaCost)
+      }
+      
       res.render('main/carddetails', card)
     })
     .catch(err => next(err))
@@ -45,7 +47,9 @@ router.get('/cardlist/:id/selected', checkAuthenticated, (req, res, next) => {
     .find(req.params.id)
     .then(card => {
 
-      card.card.manaCost = manaSymbols(card.card.manaCost)
+      if(card.card.manaCost) {
+        card.card.manaCost = manaSymbols(card.card.manaCost)
+      }
 
       const {name, colors, text, manaCost, rulings, imageUrl} = card.card
 

@@ -38,7 +38,18 @@ router.get('/deletedeck/:id', (req, res, next) =>
 router.get('/setedit/:id', checkAuthenticated, (req, res) => {
     Promise
         .all([Set.findById(req.params.id).populate('cards'), Card.find({user: req.user.id})])
-        .then(data => res.render('user/setedit', {set: data[0], card: data[1]}))
+        .then(data => {
+
+            let cardSet = data[0].cards[0]
+            let cardUsr = data[1]
+            console.log(cardSet)
+            console.log(cardUsr)
+
+            // console.log(data)
+            // console.log(filter)
+
+            res.render('user/setedit', {set: data[0], cards: data[1]})
+        })
 })
 
 router.get('/deletecard/:id', (req, res, next) => 

@@ -7,12 +7,17 @@ const cardSchema = new Schema({
         required: true
     },
     colors: {
-        type: [String],
-        enum: ['White', 'Black', 'Red', 'Blue', 'Green']
+        type: [String]
     },
-    text: String,
-    manaCost: [String],
-    rulings: Array,
+    text: {
+        type:String
+    },
+    manaCost: {
+        type: [String]
+    },
+    rulings: {
+        type: Array
+    },
     imageUrl: {
         type: String,
         default: "https://vignette.wikia.nocookie.net/magicarena/images/1/19/Cardback.png/revision/latest/scale-to-width-down/360?cb=20171013170540"
