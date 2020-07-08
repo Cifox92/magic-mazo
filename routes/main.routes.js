@@ -59,58 +59,24 @@ router.get('/cardlist/:id/selected', checkAuthenticated, (req, res, next) => {
 
 // Function for changing the visualization of the manaCost field (I REALLY like this one...)
 function manaSymbols(str) {
-  let result = str.match(/[^{]+(?=\})/g)
+  let unicode = [48,49,50,51,52,53,54,55,56,57,66,71,82,85,87]
+  let codes = []
   let arrImg = []
 
-  for(let i = 0; i < result.length; i++) {
-    switch(result[i].charCodeAt()) {
-      case 48:
-        arrImg.push('../../images/numbers/0.png')
-        break
-      case 49:
-        arrImg.push('../../images/numbers/1.png')
-        break
-      case 50:
-        arrImg.push('../../images/numbers/2.png')
-        break
-      case 51:
-        arrImg.push('../../images/numbers/3.png')
-        break
-      case 52:
-        arrImg.push('../../images/numbers/4.png')
-        break
-      case 53:
-        arrImg.push('../../images/numbers/5.png')
-        break
-      case 54:
-        arrImg.push('../../images/numbers/6.png')
-        break
-      case 55:
-        arrImg.push('../../images/numbers/7.png')
-        break
-      case 56:
-        arrImg.push('../../images/numbers/8.png')
-        break
-      case 57:
-        arrImg.push('../../images/numbers/9.png')
-        break
-      case 66:
-        arrImg.push('../../images/symbols/B.png')
-        break
-      case 71:
-        arrImg.push('../../images/symbols/G.png')
-        break
-      case 82:
-        arrImg.push('../../images/symbols/R.png')
-        break
-      case 85:
-        arrImg.push('../../images/symbols/U.png')
-        break
-      case 87:
-        arrImg.push('../../images/symbols/W.png')
-        break
-    }
-  }
+  let result = str.match(/[^{]+(?=\})/g)
+
+  result.forEach(elm => {
+    codes.push(elm.charCodeAt())
+  })
+
+  unicode.map((uni, index) => {
+    codes.map(code => {
+      if(code === uni) {
+        arrImg.push(`../../images/symbols/${index}.png`)
+      }
+    })
+  })
+  
   return arrImg
 }
 
