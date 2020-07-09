@@ -1,9 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 text-warning">
+        <div class="col-md-4 text-warning">
             {{>playCard this}}
+            <br>
+            <a class="btn btn-orange" href="/profile">Back</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <ul class="ulInfo">
                 <li class="text-white liInfo"><span>Name: </span>{{name}}</li>
                 {{#if colors}}
@@ -18,8 +20,21 @@
                     {{/each}}
                 </li>
                 {{/if}}
+                {{#if rulings}}
+                <li class="text-white liInfo rules">
+                    <span>Rulings: </span>
+                    <ul>
+                        {{#each rulings}}
+                            <li>
+                                <small class="text-warning">{{date}}</small>
+                                <br>
+                                <p>{{text}}</p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/if}}
             </ul>
         </div>
     </div>
-    <a class="btn btn-orange" href="/profile">Back</a>
 </div>

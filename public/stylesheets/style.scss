@@ -47,11 +47,22 @@ h1, h2, h3 {
   width: 40px;
 }
 
+.imgDetails {
+  width: 250px;
+  border-radius: 9px;
+}
+
 //buttons
+
+.paddings {
+  padding: 20px 0;
+}
+
 .btn-orange{
   background-color: orangered;
   color: white;
 }
+
 .btn{
   font-size: 18px;
 }
@@ -78,17 +89,30 @@ h1, h2, h3 {
   filter: blur(3px);
 }
 
+.bgnav {
+  background-color: rgba(0, 0, 0, 0.911);
+}
+
+//profile
+
+.line {
+  border-width: 10px;
+  background-color: black;
+}
+
 //usercarddetails and carddetails
 
 .ulInfo{
   background-color: rgba(128, 139, 150, 0.4);
   border-radius: 10px;
 }
+
 .liInfo{
   list-style: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
+
 .liInfo span{
   color: darkblue;
 }
@@ -96,8 +120,7 @@ h1, h2, h3 {
   font-family: Fondamento-Italic;
 }
 
-
-// login and logout
+//
 #errorMsg {
   background-color: red;
   color: white;

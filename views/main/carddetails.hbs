@@ -1,17 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 text-warning">
-            <img src="{{card.imageUrl}}" alt="{{card.name}}" class="imgcard">
+        <div class="col-md-4 text-warning">
+            <img src="{{card.imageUrl}}" alt="{{card.name}}" class="imgDetails">
             <br>
             <span class="ulInfo">{{card.name}}<span>
+            <br>
+            <a class="btn btn-primary" href="/main/cardlist/{{card.id}}/selected">Add it to your collection</a>
+            <a class="btn btn-orange" href="/main/cardlist">Back</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <ul class="ulInfo">
                 <li class="text-white liInfo"><span>Name: </span>{{card.name}}</li>
                 {{#if card.colors}}
                 <li class="text-white liInfo"><span>Color: </span>{{card.colors}}</li>
                 {{/if}}
-                <li class="text-white liInfo rules"><span >Description: </span>{{card.text}}</li>
+                <li class="text-white liInfo rules"><span>Description: </span>{{card.text}}</li>
                 {{#if card.manaCost}}
                 <li class="text-white liInfo">
                     <span>Mana cost: </span>
@@ -19,10 +22,23 @@
                         <img class="imgMana" src="{{this}}" alt="manaImg">
                     {{/each}}</li>
                 {{/if}}
+                {{#if card.rulings}}
+                <li class="text-white liInfo rules">
+                    <span>Rulings: </span>
+                    <ul>
+                        {{#each card.rulings}}
+                            <li>
+                                <small class="text-warning">{{date}}</small>
+                                <br>
+                                <p>{{text}}</p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/if}}
             </ul>
         </div>
     </div>
 
-    <a class="btn btn-primary" href="/main/cardlist/{{card.id}}/selected">Add it to your collection</a>
-    <a class="btn btn-orange" href="/main/cardlist">Back</a>
+    
 </div>

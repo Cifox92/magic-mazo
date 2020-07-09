@@ -10,7 +10,7 @@ const cardSchema = new Schema({
         type: [String]
     },
     text: {
-        type:String
+        type: String
     },
     manaCost: {
         type: [String]
