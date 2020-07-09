@@ -15,16 +15,17 @@
             <form action="/profile/setedit/add/{{id}}" method="POST">
             {{/with}}
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         {{#each cards}}
                         <li>
                             <label for="cardimg"><img src="{{imageUrl}}" alt="{{name}}" class="img-label"></label>
-                            <label for="cardname">{{name}}</label>
                             <input type="checkbox" name="cardname" id="cardname" value="{{id}}">
+                            <br>
+                            <label for="cardname">{{name}}</label>
                         </li>
                         {{/each}}
                     </div>
-                    <div class="col-md-6 markup-center">
+                    <div class="col-md-5 markup-center">
                         <button type="submit" class="btn btn-success position-fixed">Add cards</button>
                     </div>
                 </div>
@@ -36,16 +37,17 @@
             {{#with set}}
                 <form action="/profile/setedit/deletecard/{{id}}" method="POST"> 
                 <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             {{#each cards}}
                             <li>
                                 <label for="cardimg"><img src="{{imageUrl}}" alt="{{name}}" class="img-label"></label>
-                                <label for="cardname">{{name}}</label>
                                 <input type="checkbox" name="cardname" id="cardname" value="{{_id}}">
+                                <br>
+                                <label for="cardname">{{name}}</label>
                             </li>
                             {{/each}}
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <button type="submit" class="btn btn-danger position-fixed">Delete cards from deck</button>
                         </div>
                 </div>
