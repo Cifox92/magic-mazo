@@ -39,40 +39,17 @@ router.get('/setedit/:id', checkAuthenticated, (req, res) => {
     Promise
         .all([Deck.findById(req.params.id).populate('cards'), Card.find({user: req.user.id})])
         .then(data => {
-            // const cardsSet = data[0].cards
-            // const cardsUser = data[1]
-
-            // const combArr = cardsSet.concat(cardsUser)
-
-            // const setCards = new Set(combArr)
-
-            // console.log('combarr: ', combArr)
-            // console.log(setCards)
 
             let cardUsr = data[1]
             let cardSet = data[0].cards
-            let tempArr = []
-            let arrFilter = []
+
+            let filteredCardSet = cardSet.filter((card, index) => {
+                return cardSet.indexOf(card) >= index;
+            })
+            let deckCardsId = filteredCardSet.map(setCard => setCard._id)
+            let filteredUsrCards = cardUsr.filter(card => !deckCardsId.includes(card._id))
             
-            cardSet.forEach(card => {
-                tempArr.push(card._id)
-            })
-
-            cardUsr.map(elm => {
-                elmIdCorr = JSON.stringify(elm._id)
-                if(tempArr.length > 0) {
-                    tempArr.map(id => {
-                    idCorr = JSON.stringify(id)
-                    if(idCorr !== elmIdCorr) {
-                        arrFilter.push(elm)
-                    }
-                })
-                } else {
-                    arrFilter.push(elm)
-                }
-            })
-
-            res.render('user/setedit', {set: data[0], cards: arrFilter})
+            res.render('user/setedit', {set: data[0], cards: filteredUsrCards})
         })
 })
 
