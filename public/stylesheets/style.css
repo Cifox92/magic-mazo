@@ -32,13 +32,11 @@ h1, h2, h3 {
   width: 25px; }
 
 .img-label {
-  width: 40px; 
-}
+  width: 40px; }
 
 .imgDetails {
   width: 250px;
   border-radius: 9px; }
-
 
 .paddings {
   padding: 20px 0; }
@@ -55,13 +53,6 @@ h1, h2, h3 {
 
 .navbar {
   margin-bottom: 70px; }
-  
-.line {
-  border-width: 10px;
-  background-color: black; }
-
-.bgnav {
-  background-color: rgba(0, 0, 0, 0.911); }
 
 .blur-background {
   background: url("/images/fondo-4.png") no-repeat center bottom;
@@ -73,6 +64,13 @@ h1, h2, h3 {
   left: 0;
   z-index: -1;
   filter: blur(3px); }
+
+.bgnav {
+  background-color: rgba(0, 0, 0, 0.911); }
+
+.line {
+  border-width: 10px;
+  background-color: black; }
 
 .ulInfo {
   background-color: rgba(128, 139, 150, 0.4);

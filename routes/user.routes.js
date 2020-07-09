@@ -18,7 +18,6 @@ router.get('/createdeck', checkAuthenticated, (req, res) => res.render('user/cre
 router.post('/createdeck', checkAuthenticated, (req, res, next) => {
     const newDeck = {
         name: req.body.name,
-        img: 'https://d1rw89lz12ur5s.cloudfront.net/photo/coretcg/file/7a0ec880ffcb11e38049251d499677e1/large/UP%20Deck%20Box%20Blue.png',
         user: req.user.id
     }
 
@@ -39,40 +38,18 @@ router.get('/setedit/:id', checkAuthenticated, (req, res) => {
     Promise
         .all([Deck.findById(req.params.id).populate('cards'), Card.find({user: req.user.id})])
         .then(data => {
-            // const cardsSet = data[0].cards
-            // const cardsUser = data[1]
-
-            // const combArr = cardsSet.concat(cardsUser)
-
-            // const setCards = new Set(combArr)
-
-            // console.log('combarr: ', combArr)
-            // console.log(setCards)
-
             let cardUsr = data[1]
             let cardSet = data[0].cards
-            let tempArr = []
-            let arrFilter = []
-            
-            cardSet.forEach(card => {
-                tempArr.push(card._id)
+
+            let filteredCardSet = cardSet.filter((card, index) => {
+                return cardSet.indexOf(card) >= index
             })
 
-            cardUsr.map(elm => {
-                elmIdCorr = JSON.stringify(elm._id)
-                if(tempArr.length > 0) {
-                    tempArr.map(id => {
-                    idCorr = JSON.stringify(id)
-                    if(idCorr !== elmIdCorr) {
-                        arrFilter.push(elm)
-                    }
-                })
-                } else {
-                    arrFilter.push(elm)
-                }
-            })
+            let deckCardsId = filteredCardSet.map(setCard => setCard._id)
 
-            res.render('user/setedit', {set: data[0], cards: arrFilter})
+            let filteredUsrCards = cardUsr.filter(card => !deckCardsId.includes(card._id))
+
+            res.render('user/setedit', {set: data[0], cards: filteredUsrCards})
         })
 })
 
