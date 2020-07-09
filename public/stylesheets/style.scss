@@ -2,14 +2,11 @@
 body{
   font-family: Magic;
   font-size: 20px;
+  font-weight: 200;
 }
 
 h1, h2, h3 {
   font-weight: 200;
-}
-
-.navbar {
-  margin-bottom: 70px;
 }
 
 .back-trans{
@@ -18,13 +15,15 @@ h1, h2, h3 {
   border-radius: 10px;
 }
 
-.imglogo{
-  width: 100px;
-}
-
 .background{
   background: transparent;
 }
+
+.markup-center{
+  text-align: center;
+}
+
+//images
 
 .imgcard{
   border-radius: 9px;
@@ -32,9 +31,23 @@ h1, h2, h3 {
   background: transparent;
 }
 
-.markup-center{
-  text-align: center;
+.imglogo{
+  width: 100px;
 }
+
+.deckImg {
+  width: 300px;
+}
+
+.imgMana {
+  width: 25px;
+}
+
+.img-label{
+  width: 40px;
+}
+
+//buttons
 .btn-orange{
   background-color: orangered;
   color: white;
@@ -42,13 +55,15 @@ h1, h2, h3 {
 .btn{
   font-size: 18px;
 }
-.rules{
-  font-family: Fondamento-Italic;
+
+.btn-green {
+  background-color: green;
 }
 
 //layout
-body{
-  font-weight: 200;
+
+.navbar {
+  margin-bottom: 70px;
 }
 
 .blur-background{
@@ -63,9 +78,7 @@ body{
   filter: blur(3px);
 }
 
-
-//cardlist and carddetails
-
+//usercarddetails and carddetails
 
 .ulInfo{
   background-color: rgba(128, 139, 150, 0.4);
@@ -79,14 +92,12 @@ body{
 .liInfo span{
   color: darkblue;
 }
-
-// createdeck
-.deckImg {
-  width: 300px;
+.rules{
+  font-family: Fondamento-Italic;
 }
 
 
-//
+// login and logout
 #errorMsg {
   background-color: red;
   color: white;
@@ -99,16 +110,4 @@ body{
 .card {
   margin: 5px;
   border-style: none;
-}
-
-.btn-green {
-  background-color: green;
-}
-
-.deckImg {
-  width: 300px;
-}
-
-.imgMana {
-  width: 25px;
 }

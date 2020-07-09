@@ -1,31 +1,38 @@
 body {
   font-family: Magic;
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: 200; }
 
 h1, h2, h3 {
   font-weight: 200; }
-
-.navbar {
-  margin-bottom: 70px; }
 
 .back-trans {
   background-color: rgba(128, 139, 150, 0.4);
   padding: 20px;
   border-radius: 10px; }
 
-.imglogo {
-  width: 100px; }
-
 .background {
   background: transparent; }
+
+.markup-center {
+  text-align: center; }
 
 .imgcard {
   border-radius: 9px;
   width: 200px;
   background: transparent; }
 
-.markup-center {
-  text-align: center; }
+.imglogo {
+  width: 100px; }
+
+.deckImg {
+  width: 300px; }
+
+.imgMana {
+  width: 25px; }
+
+.img-label {
+  width: 40px; }
 
 .btn-orange {
   background-color: orangered;
@@ -34,11 +41,11 @@ h1, h2, h3 {
 .btn {
   font-size: 18px; }
 
-.rules {
-  font-family: Fondamento-Italic; }
+.btn-green {
+  background-color: green; }
 
-body {
-  font-weight: 200; }
+.navbar {
+  margin-bottom: 70px; }
 
 .blur-background {
   background: url("/images/fondo-4.png") no-repeat center bottom;
@@ -63,8 +70,8 @@ body {
 .liInfo span {
   color: darkblue; }
 
-.deckImg {
-  width: 300px; }
+.rules {
+  font-family: Fondamento-Italic; }
 
 #errorMsg {
   background-color: red;
@@ -77,14 +84,5 @@ body {
 .card {
   margin: 5px;
   border-style: none; }
-
-.btn-green {
-  background-color: green; }
-
-.deckImg {
-  width: 300px; }
-
-.imgMana {
-  width: 25px; }
 
 /*# sourceMappingURL=style.css.map */

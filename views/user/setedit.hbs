@@ -9,15 +9,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 text-white liInfo back-trans">
+        <div class="col-md-5 text-white liInfo back-trans">
             <h3 class="markup-center">Your cards:</h3>
             {{#with set}}
             <form action="/profile/setedit/add/{{id}}" method="POST">
             {{/with}}
                 <div class="row">
-                    <div class="col-md-6 markup-center">
+                    <div class="col-md-6">
                         {{#each cards}}
                         <li>
+                            <label for="cardimg"><img src="{{imageUrl}}" alt="{{name}}" class="img-label"></label>
                             <label for="cardname">{{name}}</label>
                             <input type="checkbox" name="cardname" id="cardname" value="{{id}}">
                         </li>
@@ -30,14 +31,15 @@
             </form>
         </div>
 
-        <div class="col-md-6 text-white liInfo back-trans">
+        <div class="col-md-5 offset-2 text-white liInfo back-trans">
             <h3 class="markup-center">Cards inside the deck:</h3>
             {{#with set}}
                 <form action="/profile/setedit/deletecard/{{id}}" method="POST"> 
                 <div class="row">
-                        <div class="col-md-6 markup-center">
+                        <div class="col-md-6">
                             {{#each cards}}
                             <li>
+                                <label for="cardimg"><img src="{{imageUrl}}" alt="{{name}}" class="img-label"></label>
                                 <label for="cardname">{{name}}</label>
                                 <input type="checkbox" name="cardname" id="cardname" value="{{_id}}">
                             </li>
