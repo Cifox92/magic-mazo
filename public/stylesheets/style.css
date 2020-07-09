@@ -24,8 +24,15 @@ h1, h2, h3 {
   width: 200px;
   background: transparent; }
 
+.imgDetails {
+  width: 250px;
+  border-radius: 9px; }
+
 .markup-center {
   text-align: center; }
+
+.paddings {
+  padding: 20px 0; }
 
 .btn-orange {
   background-color: orangered;
@@ -36,6 +43,13 @@ h1, h2, h3 {
 
 .rules {
   font-family: Fondamento-Italic; }
+
+.line {
+  border-width: 10px;
+  background-color: black; }
+
+.bgnav {
+  background-color: rgba(0, 0, 0, 0.911); }
 
 body {
   font-weight: 200; }
@@ -58,7 +72,7 @@ body {
 .liInfo {
   list-style: none;
   padding: 10px;
-  font-size: 20px; }
+  font-size: 25px; }
 
 .liInfo span {
   color: darkblue; }

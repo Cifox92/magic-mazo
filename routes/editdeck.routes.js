@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Set = require('../models/sets.model')
+const Deck = require('../models/deck.model')
 
 router.post('/add/:id', (req, res, next) => {
     let cardsSelected = []
@@ -13,7 +13,7 @@ router.post('/add/:id', (req, res, next) => {
     }
 
     cardsSelected.forEach(card => 
-        Set
+        Deck
             .findByIdAndUpdate(req.params.id, {$push: {cards: card}}, {new: true})
             .catch(err => next(err))
         )
@@ -30,7 +30,7 @@ router.post('/deletecard/:id', (req, res, next) => {
     }
 
     cardsSelected.forEach(card => {
-        Set
+        Deck
             .findByIdAndUpdate(req.params.id, {$pullAll: {cards: [card]}}, {new: true})
             .catch(err => next(err))
     })

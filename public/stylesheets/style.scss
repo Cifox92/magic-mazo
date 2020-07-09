@@ -32,18 +32,39 @@ h1, h2, h3 {
   background: transparent;
 }
 
+.imgDetails {
+  width: 250px;
+  border-radius: 9px;
+}
+
 .markup-center{
   text-align: center;
 }
+
+.paddings {
+  padding: 20px 0;
+}
+
 .btn-orange{
   background-color: orangered;
   color: white;
 }
+
 .btn{
   font-size: 18px;
 }
+
 .rules{
   font-family: Fondamento-Italic;
+}
+
+.line {
+  border-width: 10px;
+  background-color: black;
+}
+
+.bgnav {
+  background-color: rgba(0, 0, 0, 0.911);
 }
 
 //layout
@@ -71,11 +92,13 @@ body{
   background-color: rgba(128, 139, 150, 0.4);
   border-radius: 10px;
 }
+
 .liInfo{
   list-style: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
+
 .liInfo span{
   color: darkblue;
 }
@@ -84,7 +107,6 @@ body{
 .deckImg {
   width: 300px;
 }
-
 
 //
 #errorMsg {

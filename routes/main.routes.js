@@ -36,6 +36,8 @@ router.get('/cardlist/:id', checkAuthenticated, (req, res, next) => {
       if(card.card.manaCost) {
         card.card.manaCost = manaSymbols(card.card.manaCost)
       }
+
+      console.log(card.card.rulings)
       
       res.render('main/carddetails', card)
     })

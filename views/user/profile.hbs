@@ -7,7 +7,7 @@
         <p class="text-white">Here you can check your sets and cards</p>
     </div>
      
-    <div class="markup-center">
+    <div class="markup-center paddings">
         <h2 class="text-white">Your decks:</h2>
         <a class="btn btn-primary" href="/profile/createdeck">Create a deck</a>
     </div>
@@ -24,13 +24,13 @@
             </div>
         {{/each}}
     </div>
-
+    <hr class="line">
     <div class="markup-center">
         <h2 class="text-white">Your cards:</h2>
         <small class="text-info font-weight-bold markup-center">Add more cards using the search</small>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center paddings">
         {{#each cards}}
             <div class="col-md-3 card background">
                 <a href="/profile/carddetails/{{id}}" class="markup-center text-warning"> 
