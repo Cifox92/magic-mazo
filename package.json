@@ -20,7 +20,7 @@
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
     "mtgsdk": "^0.4.3",
-    "node-sass-middleware": "^0.11.0",
+    "node-sass-middleware": "^1.0.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.5.0"
