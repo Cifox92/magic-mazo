@@ -17,7 +17,7 @@
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "hbs": "^4.0.1",
-    "mongoose": "^5.2.10",
+    "mongoose": "^5.13.20",
     "morgan": "^1.9.0",
     "mtgsdk": "^0.4.3",
     "node-sass-middleware": "^1.0.1",
